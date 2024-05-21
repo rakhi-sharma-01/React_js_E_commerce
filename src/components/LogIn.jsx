@@ -79,6 +79,9 @@ class LogIn extends React.Component {
                     ) {
                       this.setState({errorMessage:"User logged in successfully!"});
                       console.log("User logged in successfully!");
+
+                      localStorage.setItem("isLogIn", JSON.stringify(true));
+
                       this.props.history.push({
                         pathname: "/",
                       });

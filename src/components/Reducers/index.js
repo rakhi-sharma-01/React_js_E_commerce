@@ -27,3 +27,6 @@ export default rootReducer;
 //         </div>
 //     </div>
 //     )}
+
+{/* <div style={{padding:"10px",height:"4vh",backgroundColor:"black",height:"100px",color:"white",display:"flex",justifyContent:"space-evenly"}}> */}
+{/* <div style={{width:"100vw",top:"20px",backgroundColor:"lavenderblush",overflowX:"hidden",overflowY:"scroll",height:"calc(100vh,6rem)"}}> */}

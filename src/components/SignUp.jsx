@@ -122,6 +122,7 @@ class SignUp extends React.Component {
                   console.log("userData: ", values);
                   localStorage.setItem("user", JSON.stringify(values));
                   setSubmitting(false);
+                  this.props.history.push("./login");
                 }}
               >
                 {({
