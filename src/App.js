@@ -6,6 +6,7 @@ import LogIn from './components/LogIn.jsx';
 import Home from './components/Home.jsx';
 import CartDetails from './components/CartDetails.jsx';
 import ProfileDetails from './components/ProfileDetails.jsx';
+import Payments from './components/Payments.jsx';
 
 function App(){
   return(
@@ -17,6 +18,8 @@ function App(){
         <Route exact path= "/login"> <LogIn/></Route>
         <Route exact path="/"> <Home/> </Route>
         <Route exact path="/profile"> <ProfileDetails/> </Route>
+        <Route exact path="/payments"> <Payments/> </Route>
+
 
       </Switch>
      </BrowserRouter>

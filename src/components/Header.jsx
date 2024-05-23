@@ -6,7 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Badge, Button } from "@mui/material";
 import { styled } from "@mui/system";
-
+import "./header.css";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -52,11 +52,11 @@ class Header extends Component {
     // const {cartCount} = this.props;
     return (
       // <div style={{width:"100vw",display:"flex",overflow:"hidden"}}>
-        <div style={{top:0,position:"sticky",width:"100%",overflow:"hidden",backgroundColor:"darkgrey",height:"100px",color:"white",display:"flex",justifyContent:"space-between"}}>
-          <p style={{width:"100px",fontSize:"25px",padding:"25px"}}>Home</p>
-          <p style={{width:"100px",fontSize:"25px",padding:"25px"}}>About</p>
-          <p style={{width:"100px",fontSize:"25px",padding:"25px"}}>Services</p>
-          <p style={{width:"100px",fontSize:"25px",padding:"25px"}}>Contact Us</p>
+        <div className="headerNav" style={{top:0,position:"sticky",width:"100%",overflow:"hidden",backgroundColor:"#9d5d5d",height:"100px",color:"white",display:"flex",justifyContent:"space-between"}}>
+          <a style={{width:"100px",fontSize:"25px",padding:"25px"}}>Home</a>
+          <a style={{width:"100px",fontSize:"25px",padding:"25px"}}>About</a>
+          <a style={{width:"100px",fontSize:"25px",padding:"25px"}}>Services</a>
+          <a style={{width:"100px",fontSize:"25px",padding:"25px",whiteSpace:"nowrap"}}>Contact Us</a>
 
           <div style={{display:'flex',marginLeft:'40%',padding:"25px"}}>
             <AccountCircleIcon fontSize="large" style={{fontSize:"40px"}} onClick={this.goToProfile}/>
@@ -68,12 +68,12 @@ class Header extends Component {
             </StyledBadge>
           </div>
           <div>
-          <Button variant="text" style={{ color: "white", marginTop: "20px" }}>
+          <Button variant="text" className="button" style={{ color: "white", marginTop: "10px",width:"130px",fontSize:"5px" }}>
             {this.state.isLoggedIn ? (
-              <Link to="/" style={{textDecoration:"none",padding:"5px",backgroundColor:"darkblue",color:"white",borderRadius:"5px"}} onClick={this.handleLogout}>Log Out</Link>
+              <Link to="/" className="button" style={{textDecoration:"none",padding:"5px",backgroundColor:"darkblue",color:"white",borderRadius:"5px"}} onClick={this.handleLogout}>Log Out</Link>
 
             ) : (
-              <Link to="/login" style={{textDecoration:"none",padding:"5px",margin:"5px",backgroundColor:"darkblue",color:"white",borderRadius:"5px"}} onClick={this.handleLogin}>Log In</Link>
+              <Link to="/login" className="button" style={{textDecoration:"none",padding:"5px",margin:"5px",backgroundColor:"darkblue",color:"white",borderRadius:"5px"}} onClick={this.handleLogin}>Log In</Link>
             )}
           </Button>
             {/* <Button variant="text" style={{color:"white",marginTop:"20px"}} onClick={()=>{this.handleLogIn() === true ? this.handleLogIn() : this.handleLogOut()}}>

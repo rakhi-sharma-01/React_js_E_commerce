@@ -2,10 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Header from './Header'
 import {decreaseQuantity,increaseQuantity} from './Action/cartActions';
+import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 class CartDetails extends React.Component{
     constructor(){
-        super()
+        super();
+        this.state={
+            isLoggedIn: JSON.parse(localStorage.getItem("isLogIn")) || false
+        }
     };
 
     handleDecrease =(id)=>{
@@ -42,31 +47,29 @@ class CartDetails extends React.Component{
         return(
             <div>
                 <Header/>
-                <h3 style={{margin:"20px"}}>Cart Details Page</h3>
-              <div>
+                <p style={{fontSize:"25px",fontWeight:500,color:"white",backgroundColor:"coral",padding:"10px"}}>Cart Details Page</p>
+              <div style={{width:"100%",height:"90%",backgroundColor:"lavenderblush"}}>
                   {cartItems.map((item, index) => (
-                  <div key={index}style={{border:"darkslategray solid 2px",width:"300px",padding:"20px",margin:"20px",flexDirection:"row",display:"flex",}}>
+                  <div key={index}style={{boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",width:"600px",padding:"20px",margin:"20px",flexDirection:"row",display:"flex",}}>
                        {/* <div style={{}}> */}
-                           <img src={item.image}  style={{height:"80px",maxWidth:"100%"}}/>
+                           <img src={item.image}  style={{height:"100px",maxWidth:"100%",marginLeft:"30px"}}/>
                         {/* </div> */}
-                     <div>
-                         <p>Name: {item.name}</p>
+                     <div style={{margin:"auto",fontSize:"18px",fontFamily:"serif",fontWeight:600}}>
+                         <p> {item.name}</p>
                          <p>Price: {item.price}</p>
                          <p> Quantity : 
-                         <button style={{margin:"7px",padding:"3px"}} onClick={()=>this.handleDecrease(item?.id)}> - </button>
+                         <button style={{margin:"7px",height:"20px",width:"20px",borderRadius:"50%",backgroundColor:"azure",fontWeight:"bolder"}} onClick={()=>this.handleDecrease(item?.id)}> - </button>
                          {item.quantity}
-                         <button style={{margin:"7px",padding:"3px"}} onClick={()=>this.handleIncrease(item?.id,index)}> + </button>
+                         <button style={{margin:"7px",height:"20px",width:"20px",borderRadius:"50%",backgroundColor:"azure",fontWeight:"bolder"}} onClick={()=>this.handleIncrease(item?.id,index)}> + </button>
                          </p>
                          <p>Total: {this.calculateTotalPrice(item)}</p>
                      </div>
                   </div>
                  ))}
               </div>
-              {/* <button
-                  style={{ margin: "20px", padding: "10px", backgroundColor: "coral", color: "white" ,fontWeight:600,border:"none",width:"250px"}}
-                  onClick={()=>this.handlePlaceOrder ? this.handleCheckout() : null}>
-                  PLACE ORDER
-              </button> */}
+              <Button variant="text" style={{ margin: "20px", padding: "10px", backgroundColor: "coral", color: "white" ,fontWeight:600,border:"none",width:"250px" }}>
+                 <Link to={this.state.isLoggedIn ? "/payments" : "/login"} style={{textDecoration:"none",padding:"5px",backgroundColor:"coral",color:"white",borderRadius:"5px"}} onClick={this.handleCheckout}>PLACE ORDER</Link>
+              </Button>
             </div>
         )
     }
