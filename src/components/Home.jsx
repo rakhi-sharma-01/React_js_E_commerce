@@ -4,6 +4,7 @@ import { Button } from "@mui/material";
 import { connect } from "react-redux";
 import { addToCart } from "./Action/cartActions";
 import { withRouter } from "react-router-dom";
+import Slider from "./Slider";
 
 class Home extends Component {
   constructor() {
@@ -57,10 +58,11 @@ class Home extends Component {
         <Header cartCount={this.props.cart.length} />
         
         <div style={{ width: "100%", height: "500px" }}>
-          <img
+          {/* <img
             style={{ width: "100%", height: "500px" }}
             src="shopping-sales.jpg"
-          />
+          /> */}
+          <Slider/>
         </div>
 
         <div style={{ display: "flex", flexDirection: "row" ,width:"100%",overflow:"hidden"}}>

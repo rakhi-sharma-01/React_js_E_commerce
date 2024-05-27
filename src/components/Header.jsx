@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Badge, Button } from "@mui/material";
+import { Badge, Button, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import "./header.css";
 
@@ -52,34 +52,42 @@ class Header extends Component {
     // const {cartCount} = this.props;
     return (
       // <div style={{width:"100vw",display:"flex",overflow:"hidden"}}>
-        <div className="headerNav" style={{top:0,position:"sticky",width:"100%",overflow:"hidden",backgroundColor:"#9d5d5d",height:"100px",color:"white",display:"flex",justifyContent:"space-between"}}>
-          <a style={{width:"100px",fontSize:"25px",padding:"25px"}}>Home</a>
-          <a style={{width:"100px",fontSize:"25px",padding:"25px"}}>About</a>
-          <a style={{width:"100px",fontSize:"25px",padding:"25px"}}>Services</a>
-          <a style={{width:"100px",fontSize:"25px",padding:"25px",whiteSpace:"nowrap"}}>Contact Us</a>
+        <div className="headerNav" style={{top:0,position:"sticky",width:"100%",overflow:"hidden",backgroundColor:"black",height:"90px",color:"white",display:"flex",justifyContent:"space-between",flexDirection:"column"}}>
+           <div style={{width:"100%",height:"20px",justifyContent:"center",alignItems:"center",textAlign:"center",display:"flex",backgroundColor:"rgb(138 115 80)"}}>
+            <Typography>FREE SHIPPING ON ALL ONLINE PAYMENTS. FREE RETURNS.</Typography>
+           </div>
+           <div style={{width:"100%",overflow:"hidden",backgroundColor:"black",height:"100px",color:"white",display:"flex",justifyContent:"space-between"}}>
+             <a style={{width:"120px",fontSize:"24px",padding:"10px"}}><img style={{height:"50px",width:"50px"}} src="RAKHI SHARMA.png"/></a>
+             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Store</a>
+             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Phone</a>
+             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Tablet</a>
+             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Community</a>
+             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Support</a>
 
-          <div style={{display:'flex',marginLeft:'40%',padding:"25px"}}>
-            <AccountCircleIcon fontSize="large" style={{fontSize:"40px"}} onClick={this.goToProfile}/>
-          </div>
 
-          <div style={{padding:"25px"}}>
-            <StyledBadge sx={{fontSize:"20px",fontWeight:600}} badgeContent={this.props.cartCount} color="primary">
-              <ShoppingCartIcon fontSize="large" style={{fontSize:"40px"}} onClick={this.handleClick}/>
-            </StyledBadge>
-          </div>
-          <div>
-          <Button variant="text" className="button" style={{ color: "white", marginTop: "10px",width:"130px",fontSize:"5px" }}>
-            {this.state.isLoggedIn ? (
-              <Link to="/" className="button" style={{textDecoration:"none",padding:"5px",backgroundColor:"darkblue",color:"white",borderRadius:"5px"}} onClick={this.handleLogout}>Log Out</Link>
+             <div style={{display:'flex',marginLeft:'25%',padding:"17px"}}>
+               <AccountCircleIcon fontSize="large" style={{fontSize:"40px"}} onClick={this.goToProfile}/>
+             </div>
 
-            ) : (
-              <Link to="/login" className="button" style={{textDecoration:"none",padding:"5px",margin:"5px",backgroundColor:"darkblue",color:"white",borderRadius:"5px"}} onClick={this.handleLogin}>Log In</Link>
-            )}
-          </Button>
-            {/* <Button variant="text" style={{color:"white",marginTop:"20px"}} onClick={()=>{this.handleLogIn() === true ? this.handleLogIn() : this.handleLogOut()}}>
-              {this.handleLogIn() === true ? 'Log out' : 'Log in'}
-            </Button> */}
-          </div>
+              <div style={{padding:"17px"}}>
+                <StyledBadge sx={{fontSize:"20px",fontWeight:600}} badgeContent={this.props.cartCount} color="primary">
+                  <ShoppingCartIcon fontSize="large" style={{fontSize:"40px"}} onClick={this.handleClick}/>
+                </StyledBadge>
+              </div>
+              <div>
+               <Button variant="text" className="button" style={{ color: "white", marginTop: "10px",width:"130px",fontSize:"5px" }}>
+                 {this.state.isLoggedIn ? (
+               <Link to="/" className="button" style={{textDecoration:"none",padding:"5px",backgroundColor:"darkblue",color:"white",borderRadius:"5px"}} onClick={this.handleLogout}>Log Out</Link>
+
+                ) : (
+                 <Link to="/login" className="button" style={{textDecoration:"none",padding:"5px",margin:"5px",backgroundColor:"darkblue",color:"white",borderRadius:"5px"}} onClick={this.handleLogin}>Log In</Link>
+                )}
+               </Button>
+                {/* <Button variant="text" style={{color:"white",marginTop:"20px"}} onClick={()=>{this.handleLogIn() === true ? this.handleLogIn() : this.handleLogOut()}}>
+                 {this.handleLogIn() === true ? 'Log out' : 'Log in'}
+                    </Button> */}
+              </div>
+           </div>
           
         </div>
       // </div>
