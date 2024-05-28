@@ -27,7 +27,8 @@ class Header extends Component {
   constructor() {
     super();
     this.state={
-      isLoggedIn: JSON.parse(localStorage.getItem("isLogIn")) || false
+      isLoggedIn: JSON.parse(localStorage.getItem("isLogIn")) || false,
+      dropdownVisible: false
     }
   }
   handleClick = () => {
@@ -43,13 +44,26 @@ class Header extends Component {
     localStorage.setItem("isLogIn", true);
     this.setState({ isLoggedIn: true });
   };
+  goTohome =() => {
+    this.props.history.push('./');
+  }
 
   handleLogout = () => {
     localStorage.removeItem("isLogIn");
     this.setState({ isLoggedIn: false }); 
   };
+
+  handleMouseOver = () => {
+    this.setState({ dropdownVisible: true });
+  };
+
+  handleMouseOut = () => {
+    this.setState({ dropdownVisible: false });
+  };
+
   render() {
     // const {cartCount} = this.props;
+    const{dropdownVisible} = this.state;
     return (
       // <div style={{width:"100vw",display:"flex",overflow:"hidden"}}>
         <div className="headerNav" style={{top:0,position:"sticky",width:"100%",overflow:"hidden",backgroundColor:"black",height:"90px",color:"white",display:"flex",justifyContent:"space-between",flexDirection:"column"}}>
@@ -57,12 +71,28 @@ class Header extends Component {
             <Typography>FREE SHIPPING ON ALL ONLINE PAYMENTS. FREE RETURNS.</Typography>
            </div>
            <div style={{width:"100%",overflow:"hidden",backgroundColor:"black",height:"100px",color:"white",display:"flex",justifyContent:"space-between"}}>
-             <a style={{width:"120px",fontSize:"24px",padding:"10px"}}><img style={{height:"50px",width:"50px"}} src="RAKHI SHARMA.png"/></a>
-             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Store</a>
+             <a style={{width:"120px",fontSize:"24px",padding:"10px"}}><img style={{height:"50px",width:"50px",marginLeft:"20px"}} src="RAKHI SHARMA.png" onClick={this.goTohome}/></a>
+             <nav>
+              <ul>
+                <li onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",listStyleType: "none"}}>Smart TV
+                {dropdownVisible && 
+                  <div style={{width:"90%",height:"200px",color:"white"}}>
+                    <ul>
+                      <li>MI TV</li>
+                      <li>MI TV</li>
+                      <li>MI TV</li>
+                      <li>MI TV</li>
+                    </ul>
+                  </div>
+                }
+                </li>
+              </ul>
+             </nav>
+             {/* <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap"}}>Smart TV</a>
              <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Phone</a>
              <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Tablet</a>
              <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Community</a>
-             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Support</a>
+             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Support</a> */}
 
 
              <div style={{display:'flex',marginLeft:'25%',padding:"17px"}}>
@@ -83,9 +113,7 @@ class Header extends Component {
                  <Link to="/login" className="button" style={{textDecoration:"none",padding:"5px",margin:"5px",backgroundColor:"darkblue",color:"white",borderRadius:"5px"}} onClick={this.handleLogin}>Log In</Link>
                 )}
                </Button>
-                {/* <Button variant="text" style={{color:"white",marginTop:"20px"}} onClick={()=>{this.handleLogIn() === true ? this.handleLogIn() : this.handleLogOut()}}>
-                 {this.handleLogIn() === true ? 'Log out' : 'Log in'}
-                    </Button> */}
+    
               </div>
            </div>
           
@@ -104,7 +132,3 @@ const mapStateToProps = (state) => {
 
 export default withRouter(connect(mapStateToProps)(Header));
 
-          {/* <img
-            src="https://static.vecteezy.com/system/resources/thumbnails/000/496/007/small/Ecommerce_998.jpg"
-            onClick={this.handleClick}
-          /> */}

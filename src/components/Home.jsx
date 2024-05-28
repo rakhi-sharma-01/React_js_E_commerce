@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { addToCart } from "./Action/cartActions";
 import { withRouter } from "react-router-dom";
 import Slider from "./Slider";
+import Footer from "./Footer";
 
 class Home extends Component {
   constructor() {
@@ -58,10 +59,6 @@ class Home extends Component {
         <Header cartCount={this.props.cart.length} />
         
         <div style={{ width: "100%", height: "500px" }}>
-          {/* <img
-            style={{ width: "100%", height: "500px" }}
-            src="shopping-sales.jpg"
-          /> */}
           <Slider/>
         </div>
 
@@ -129,6 +126,10 @@ class Home extends Component {
             </div>
           ))}
         </div>
+        <div style={{height:"180px",width:"90%",margin:"30px 5%"}}><img style={{height:"100%",width:"100%"}} src="banner2.png"/></div>
+        <div style={{height:"180px",width:"90%",margin:"30px 5%"}}><img style={{height:"100%",width:"100%"}} src="banner1.png"/></div>
+
+        <Footer/>
       </div>
     );
   }
