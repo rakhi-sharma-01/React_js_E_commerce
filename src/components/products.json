@@ -1,0 +1,188 @@
+{
+  "mobiles": [
+    {
+      "id": 1,
+      "name": "Smartphone A1",
+      "price": 699.99,
+      "description": "A high-performance smartphone with a sleek design and advanced features. It includes a powerful processor, a stunning display, and a high-capacity battery. Perfect for gaming, photography, and multitasking.",
+      "offers": "10% off on first purchase",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Smartphone B2",
+      "price": 499.99,
+      "description": "A budget-friendly smartphone with a powerful battery and vibrant display. Enjoy all-day battery life, an impressive camera, and a user-friendly interface. Ideal for everyday use.",
+      "offers": "Buy one get one 50% off",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Smartphone C3",
+      "price": 899.99,
+      "description": "A premium smartphone with the latest technology and superior camera quality. Features include a top-of-the-line processor, high-resolution display, and advanced camera system for stunning photos and videos.",
+      "offers": "Free shipping on orders over $500",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Smartphone D4",
+      "price": 799.99,
+      "description": "A versatile smartphone with excellent performance and sleek design. Equipped with a fast processor, sharp display, and extensive battery life. Perfect for professionals and tech enthusiasts.",
+      "offers": "20% off with code SAVE20",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Smartphone E5",
+      "price": 599.99,
+      "description": "A reliable smartphone with a long-lasting battery and crystal clear display. Features include a robust build, excellent camera quality, and smooth performance for all your needs.",
+      "offers": "15% off on weekends",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    }
+  ],
+  "smart_tvs": [
+    {
+      "id": 6,
+      "name": "Smart TV A1",
+      "price": 999.99,
+      "description": "A 55-inch smart TV with 4K resolution and HDR support. Enjoy an immersive viewing experience with vibrant colors and sharp details. Equipped with smart features for seamless streaming and connectivity.",
+      "offers": "Free soundbar with purchase",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Smart TV B2",
+      "price": 1299.99,
+      "description": "A 65-inch smart TV with ultra-high-definition display and smart features. Experience stunning visuals and high-quality audio with this state-of-the-art television. Perfect for home theaters.",
+      "offers": "Save $200 on your next purchase",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Smart TV C3",
+      "price": 799.99,
+      "description": "A 50-inch smart TV with vibrant colors and excellent sound quality. Features include a user-friendly interface, multiple connectivity options, and a sleek design. Ideal for any living room.",
+      "offers": "Free wall mount with purchase",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Smart TV D4",
+      "price": 1499.99,
+      "description": "A 75-inch smart TV with immersive viewing experience and smart home integration. Enjoy lifelike picture quality, enhanced sound, and easy control with voice assistants.",
+      "offers": "10% off on using credit card",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Smart TV E5",
+      "price": 899.99,
+      "description": "A 55-inch smart TV with sharp image quality and user-friendly interface. Features include smart connectivity, dynamic range, and sleek aesthetics. A great addition to any home.",
+      "offers": "Extended warranty for 1 year",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    }
+  ],
+  "tablets": [
+    {
+      "id": 11,
+      "name": "Tablet A1",
+      "price": 299.99,
+      "description": "A lightweight tablet with a high-resolution display and powerful processor. Perfect for browsing, streaming, and light gaming. Features long battery life and fast charging.",
+      "offers": "Free case with purchase",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Tablet B2",
+      "price": 399.99,
+      "description": "A versatile tablet with long battery life and ample storage. Ideal for students and professionals. Comes with a responsive touchscreen and intuitive interface.",
+      "offers": "10% off on student discount",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Tablet C3",
+      "price": 499.99,
+      "description": "A high-performance tablet with a sleek design and advanced features. Includes a stunning display, fast processor, and extensive app support. Great for productivity and entertainment.",
+      "offers": "Trade-in offer available",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Tablet C3",
+      "price": 499.99,
+      "description": "A high-performance tablet with a sleek design and advanced features. Includes a stunning display, fast processor, and extensive app support. Great for productivity and entertainment.",
+      "offers": "Trade-in offer available",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Tablet C3",
+      "price": 499.99,
+      "description": "A high-performance tablet with a sleek design and advanced features. Includes a stunning display, fast processor, and extensive app support. Great for productivity and entertainment.",
+      "offers": "Trade-in offer available",
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ]
+    }
+  ]
+}

@@ -28,7 +28,13 @@ class Header extends Component {
     super();
     this.state={
       isLoggedIn: JSON.parse(localStorage.getItem("isLogIn")) || false,
-      dropdownVisible: false
+      dropdownVisible:{
+        smartTv: false,
+        phone: false,
+        tablet: false,
+        community: false,
+        support: false
+      }
     }
   }
   handleClick = () => {
@@ -53,30 +59,95 @@ class Header extends Component {
     this.setState({ isLoggedIn: false }); 
   };
 
-  handleMouseOver = () => {
-    this.setState({ dropdownVisible: true });
+  handleMouseOver = (key) => {
+    this.setState((prevState)=>({
+      dropdownVisible: {...prevState.dropdownVisible , [key]:true}
+    }));
   };
 
-  handleMouseOut = () => {
-    this.setState({ dropdownVisible: false });
-  };
+  handleMouseOut = (key) => {
+    this.setState((prevState)=>({
+      dropdownVisible: {...prevState.dropdownVisible , [key]:false}
+    }));  };
 
   render() {
     // const {cartCount} = this.props;
     const{dropdownVisible} = this.state;
     return (
       // <div style={{width:"100vw",display:"flex",overflow:"hidden"}}>
-        <div className="headerNav" style={{top:0,position:"sticky",width:"100%",overflow:"hidden",backgroundColor:"black",height:"90px",color:"white",display:"flex",justifyContent:"space-between",flexDirection:"column"}}>
+        <div className="headerNav" style={{top:0,position:"sticky",width:"100%",overflow:"hidden",backgroundColor:"black",height:"90px",color:"white",display:"flex",justifyContent:"space-between",flexDirection:"column",zIndex:2}}>
            <div style={{width:"100%",height:"20px",justifyContent:"center",alignItems:"center",textAlign:"center",display:"flex",backgroundColor:"rgb(138 115 80)"}}>
             <Typography>FREE SHIPPING ON ALL ONLINE PAYMENTS. FREE RETURNS.</Typography>
            </div>
            <div style={{width:"100%",overflow:"hidden",backgroundColor:"black",height:"100px",color:"white",display:"flex",justifyContent:"space-between"}}>
              <a style={{width:"120px",fontSize:"24px",padding:"10px"}}><img style={{height:"50px",width:"50px",marginLeft:"20px"}} src="RAKHI SHARMA.png" onClick={this.goTohome}/></a>
-             <nav>
+             <div style={{position:"relative"}}>
+             <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('smartTv')} onMouseOut={()=>this.handleMouseOut('smartTv')}>
+                 Smart TV 
+                  {dropdownVisible.smartTv && 
+                  <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
+                    <ul style={{ fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"max-content"}}>
+                      <li>QLED TV</li>
+                      <li>Alexa TV</li>
+                    </ul>
+                  </div>}
+               </a>
+             </div> 
+             <div style={{position:"relative"}}>
+                <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('phone')} onMouseOut={()=>this.handleMouseOut('phone')}>
+                 Phone 
+                  {dropdownVisible.phone && 
+                  <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
+                    <ul style={{ fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"max-content"}}>
+                      <li>Xiomi Series</li>
+                      <li>Redmi Series</li>
+                    </ul>
+                  </div>}
+               </a>
+             </div>
+             <div style={{position:"relative"}}>
+                <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('tablet')} onMouseOut={()=>this.handleMouseOut('tablet')}>
+                 Tablet 
+                  {dropdownVisible.tablet && 
+                  <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
+                    <ul style={{fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"max-content"}}>
+                      <li>Xiomi Pad</li>
+                      <li>Redmi Pad</li>
+                      <li>Tablet Accessories</li>
+                    </ul>
+                  </div>}
+               </a>
+             </div>
+             <div style={{position:"relative"}}>
+                <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('community')} onMouseOut={()=>this.handleMouseOut('community')}>
+                 Community 
+                  {dropdownVisible.community && 
+                  <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
+                    <ul style={{ fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"max-content"}}>
+                      <li>Our Community</li>
+                      <li>Our Team</li>
+                      <li>Our Clients</li>
+                    </ul>
+                  </div>}
+               </a>
+             </div>
+             <div style={{position:"relative"}}>
+                <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('support')} onMouseOut={()=>this.handleMouseOut('support')}>
+                 Support 
+                  {dropdownVisible.support && 
+                  <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
+                    <ul style={{ fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"120px"}}>
+                      <li>Email Us</li>
+                      <li>Chat Now</li>
+                    </ul>
+                  </div>}
+               </a>
+             </div>
+             {/* <nav>
               <ul>
                 <li onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",listStyleType: "none"}}>Smart TV
                 {dropdownVisible && 
-                  <div style={{width:"90%",height:"200px",color:"white"}}>
+                  <div style={{width:"90%",height:"300px",color:"white",backgroundColor:"black",zIndex:1}}>
                     <ul>
                       <li>MI TV</li>
                       <li>MI TV</li>
@@ -86,8 +157,8 @@ class Header extends Component {
                   </div>
                 }
                 </li>
-              </ul>
-             </nav>
+              </ul> */}
+             {/* </nav> */}
              {/* <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap"}}>Smart TV</a>
              <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Phone</a>
              <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Tablet</a>
@@ -95,7 +166,7 @@ class Header extends Component {
              <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Support</a> */}
 
 
-             <div style={{display:'flex',marginLeft:'25%',padding:"17px"}}>
+             <div style={{display:'flex',marginLeft:'20%',padding:"17px"}}>
                <AccountCircleIcon fontSize="large" style={{fontSize:"40px"}} onClick={this.goToProfile}/>
              </div>
 

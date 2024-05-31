@@ -6,34 +6,15 @@ import { addToCart } from "./Action/cartActions";
 import { withRouter } from "react-router-dom";
 import Slider from "./Slider";
 import Footer from "./Footer";
+import productsData from "./products.json";
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      products: [
-        {
-          id: "01",
-          name: "iPhone 14 Pro Max",
-          price: "1,39,000",
-          quantity: 1,
-          image: "iphone_14.jpg",
-        },
-        {
-          id: "02",
-          name: "Samsung Galaxy S20",
-          price: "49,999",
-          quantity: 1,
-          image: "Samsung.jpg",
-        },
-        {
-          id: "03",
-          name: "Google Pixel 5",
-          price: "69,999",
-          quantity: 1,
-          image: "google_pixel_5.jpg",
-        },
-      ],
+      products: productsData,
+      filteredProducts: [],
+      filterType: "all",
     };
   }
 
@@ -43,93 +24,113 @@ class Home extends Component {
 
   handleAddToCart = (product) => {
     const { name, price, id, quantity, image } = product;
-    console.log("product", product);
     this.props.addToCartr({ name, price, id, quantity, image });
-    // this.setState(prevState => ({
-    //     products : prevState.products.map(p => p.id === id ? {...p, handleCartState :true} : p)
-    // }))
   };
+
   handleGoToCart = () => {
     this.props.history.push("/cartDetails");
   };
+
+  filterProducts = () => {
+    const { products, filterType } = this.state;
+    let filteredProducts = [];
+    if (filterType === "all") {
+      Object.values(products).forEach(category => {
+        filteredProducts = filteredProducts.concat(category);
+      });
+    } else {
+      filteredProducts = products[filterType];
+    }
+    this.setState({ filteredProducts });
+};
+handleFilterChange = (filterType) => {
+  this.setState({ filterType }, () => {
+    this.filterProducts();
+  });
+};
+
+
+  componentDidMount() {
+    const { products, filterType } = this.state;
+    let filteredProducts = [];
+    if (filterType === "all") {
+      Object.values(products).forEach(category => {
+        filteredProducts = filteredProducts.concat(category);
+      });
+      this.setState({ filteredProducts });
+
+    // this.filteredProducts();
+  }}
+
   render() {
-    const { products } = this.state;
+    const { filteredProducts } = this.state;
     return (
       <div style={{ top: "20px", backgroundColor: "lavenderblush" }}>
         <Header cartCount={this.props.cart.length} />
-        
         <div style={{ width: "100%", height: "500px" }}>
-          <Slider/>
+          <Slider />
         </div>
-
-        <div style={{ display: "flex", flexDirection: "row" ,width:"100%",overflow:"hidden"}}>
-          {products.map((product) => (
+        <div style={{ display: "flex", justifyContent: "center",backgroundColor:"coral", }}>
+          <Button style={{color:"white",fontSize:"20px",padding:"15px",fontWeight:600}} onClick={() => this.handleFilterChange("mobiles")}>
+            Mobiles
+          </Button>
+          <Button style={{color:"white",fontSize:"20px",padding:"15px",fontWeight:600}} onClick={() => this.handleFilterChange("smart_tvs")}>
+            Smart TVs
+          </Button>
+          <Button style={{color:"white",fontSize:"20px",padding:"15px",fontWeight:600}} onClick={() => this.handleFilterChange("tablets")}>
+            Tablets
+          </Button>
+          {/* <Button style={{color:"white",fontSize:"20px",padding:"15px",fontWeight:600}} onClick={() => this.handleFilterChange("earphones")}>
+            Earphones
+          </Button> */}
+          <Button style={{color:"white",fontSize:"20px",padding:"15px",fontWeight:600}} onClick={() => this.handleFilterChange("all")}>
+            All Products
+          </Button>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          {filteredProducts.map((product) => (
             <div key={product.id} className="cart-wrapper">
-              <div className="" style={{ width: "300px", height: "400px" }}>
+              <div
+                style={{ width: "300px", height: "360px", textAlign: "center" }}
+              >
                 <img
-                  src={product.image}
+                  src={product.images[0]} //first image is the main image
                   style={{
-                    height: "380px",
+                    height: "300px",
                     width: "300px",
                     borderRadius: "20px",
                   }}
+                  alt={product.name}
                 />
+                <div style={{ marginTop: "10px" }}>{product.name}</div>
+                <div>Rs: {product.price}</div>
               </div>
-              <div
-                className=""
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <span style={{ fontSize: "20px", padding: "7px" }}>
-                  {product.name}
-                </span>
-                <span
-                  style={{
-                    color: "white",
-                    backgroundColor: "#CC0C39",
-                    borderRadius: "4px",
-                    padding: "4px 8px",
-                  }}
-                >
-                  Limited time deal
-                </span>
-                <span style={{ fontSize: "20px", padding: "7px" }}>
-                  Rs : {product.price}
-                </span>
-              </div>
-              <div
-                className=""
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div style={{ textAlign: "center" }}>
                 <Button
                   variant="contained"
-                  onClick={() => {
-                    this.handleCartState(product.id) === true
+                  onClick={() =>
+                    this.handleCartState(product.id)
                       ? this.handleGoToCart(product)
-                      : this.handleAddToCart(product);
-                  }}
-                  style={{ fontWeight: 600 }}
+                      : this.handleAddToCart(product)
+                  }
+                  style={{ fontWeight: 600, marginTop: "10px" }}
                 >
-                  {this.handleCartState(product.id) === true
-                    ? "Go to Cart"
-                    : "Add to Cart"}
+                  {this.handleCartState(product.id) ? "Go to Cart" : "Add to Cart"}
                 </Button>
               </div>
             </div>
           ))}
         </div>
-        <div style={{height:"180px",width:"90%",margin:"30px 5%"}}><img style={{height:"100%",width:"100%"}} src="banner2.png"/></div>
-        <div style={{height:"180px",width:"90%",margin:"30px 5%"}}><img style={{height:"100%",width:"100%"}} src="banner1.png"/></div>
-
-        <Footer/>
+        <div style={{width:"80%",margin:"20px 10%",height:"200px"}}><img style={{width:"100%",margin:"auto",height:"200px"}}src="banner1.png"/></div>
+        <div style={{width:"80%",margin:"20px 10%",height:"200px"}}><img style={{width:"100%",margin:"auto",height:"200px"}}src="banner2.png"/></div>
+        <Footer />
       </div>
     );
   }

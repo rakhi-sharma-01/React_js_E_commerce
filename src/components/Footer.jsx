@@ -3,8 +3,9 @@ import React,{Component} from "react";
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Link, withRouter } from "react-router-dom";
 
-export default class Footer extends Component{
+class Footer extends Component{
     constructor(){
         super();
     }
@@ -27,26 +28,26 @@ export default class Footer extends Component{
                         <div style={{color:"white"}}>
                         <Typography style={{color:"#ae9eec",fontFamily:"Libre Caslon Text",fontWeight:700,fontStyle:"normal",lineHeight:"1.2em",fontSize:"20px",letterSpacing:"0px"}}>Helpful Links</Typography>
                             <ul>
-                                <li>Our Story</li>
+                                {/* <li>Our Story</li>
                                 <li>Blog</li>
                                 <li>Blog</li>
-                                <li>All Products</li>
+                                <li>All Products</li> */}
+                                <Link to="/termsOfService" style={{textDecoration:"none",color:"white",}}  onMouseOver={(e) => e.target.style.color = "#2196f3"} onMouseOut={(e) => e.target.style.color = "white"}><li>Terms of Service</li></Link>
                             </ul>
                         </div>
                         <div style={{color:"white"}}>
                         <Typography style={{color:"#ae9eec",fontFamily:"Libre Caslon Text",fontWeight:700,fontStyle:"normal",lineHeight:"1.2em",fontSize:"20px",letterSpacing:"0px"}}>Policies</Typography>
                         <ul>
-                            <li>Refund Policy</li>
-                            <li>Shipping Policy</li>
-                            <li>Privacy Policy</li>
-                            <li>Terms of Service</li>
+                            <Link to="/refundPolicy" style={{textDecoration:"none",color:"white"}}  onMouseOver={(e) => e.target.style.color = "#2196f3"} onMouseOut={(e) => e.target.style.color = "white"}><li>Refund Policy</li></Link>
+                            <Link to="/shippingPolicy" style={{textDecoration:"none",color:"white"}}  onMouseOver={(e) => e.target.style.color = "#2196f3"} onMouseOut={(e) => e.target.style.color = "white"}><li>Shipping Policy</li></Link>
+                            <Link to="/privacyPolicy" style={{textDecoration:"none",color:"white"}}  onMouseOver={(e) => e.target.style.color = "#2196f3"} onMouseOut={(e) => e.target.style.color = "white"}><li>Privacy Policy</li></Link>
                         </ul>
                         </div>
                         <div style={{color:"white"}}>
                         <Typography style={{color:"#ae9eec",fontFamily:"Libre Caslon Text",fontWeight:700,fontStyle:"normal",lineHeight:"1.2em",fontSize:"20px",letterSpacing:"0px"}}>Contact Us </Typography>
                         <ul>
-                            <li>Help</li>
-                            <li>Career</li>
+                           <Link to="/help" style={{textDecoration:"none",color:"white"}}  onMouseOver={(e) => e.target.style.color = "#2196f3"} onMouseOut={(e) => e.target.style.color = "white"}><li>Help</li></Link>
+                            {/* <li>Career</li> */}
                         </ul>
                         </div>
                         <div style={{color:"white"}}>
@@ -62,3 +63,5 @@ export default class Footer extends Component{
         )
     }
 }
+
+export default withRouter(Footer);

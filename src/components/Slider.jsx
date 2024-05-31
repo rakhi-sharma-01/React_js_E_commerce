@@ -13,13 +13,13 @@ export default class Slider extends Component{
         }
     }
 
-    // componentDidMount() {
-    //     this.interval = setInterval(this.nextSlide, 3000);
-    //   }
+    componentDidMount() {
+        this.interval = setInterval(this.nextSlide, 3000);
+      }
     
-    // componentWillUnmount() {
-    //     clearInterval(this.interval);
-    //   }
+    componentWillUnmount() {
+        clearInterval(this.interval);
+      }
 
     nextSlide =()=>{
         console.log("called");

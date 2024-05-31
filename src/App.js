@@ -7,6 +7,11 @@ import Home from './components/Home.jsx';
 import CartDetails from './components/CartDetails.jsx';
 import ProfileDetails from './components/ProfileDetails.jsx';
 import Payments from './components/Payments.jsx';
+import RefundPolicy from './components/footer/RefundPolicy.jsx';
+import ShippingPolicy from './components/footer/ShippingPolicy.jsx';
+import PrivacyPolicy from './components/footer/PrivacyPolicy.jsx';
+import TermsOfService from './components/footer/TermsOfService.jsx';
+import Help from './components/footer/Help.jsx';
 
 function App(){
   return(
@@ -19,7 +24,11 @@ function App(){
         <Route exact path="/"> <Home/> </Route>
         <Route exact path="/profile"> <ProfileDetails/> </Route>
         <Route exact path="/payments"> <Payments/> </Route>
-
+        <Route exact path="/refundPolicy"> <RefundPolicy/> </Route>
+        <Route exact path="/shippingPolicy"> <ShippingPolicy/> </Route>
+        <Route exact path="/privacyPolicy"> <PrivacyPolicy/> </Route>
+        <Route exact path="/termsOfService"> <TermsOfService/> </Route>
+        <Route exact path="/help"> <Help/> </Route>
 
       </Switch>
      </BrowserRouter>

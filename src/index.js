@@ -19,3 +19,18 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+// handleFilterChange = (filterType) => {
+//   this.setState({ filterType }, this.filterProducts);
+// };
+
+// filterProducts = () => {
+//   const { products, filterType } = this.state;
+//   if (filterType === "all") {
+//     this.setState({ filteredProducts: products });
+//   } else {
+//     const filteredProducts = products[filterType];
+//     this.setState({ filteredProducts });
+//   }
+// };
