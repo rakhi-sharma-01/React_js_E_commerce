@@ -1,0 +1,16 @@
+
+.product-page {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .product-gallery {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .product-details {
+    flex: 1;
+    min-width: 300px;
+  }
+  

@@ -1,0 +1,31 @@
+.product-details {
+    padding: 20px;
+  }
+  
+  .price {
+    font-size: 24px;
+    color: #b12704;
+  }
+  
+  .original-price {
+    text-decoration: line-through;
+    color: #565959;
+  }
+  
+  .color, .sizes {
+    margin: 10px 0;
+  }
+  
+  .add-to-bag {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .add-to-bag:hover {
+    background-color: #e68a00;
+  }
+  

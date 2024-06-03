@@ -1,0 +1,24 @@
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main-image {
+    width: 80%;
+    height: auto;
+  }
+  
+  .thumbnail-images {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .thumbnail-images img {
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
