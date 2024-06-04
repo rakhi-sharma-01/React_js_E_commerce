@@ -4,6 +4,7 @@ import Header from './Header'
 import {decreaseQuantity,increaseQuantity} from './Action/cartActions';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 class CartDetails extends React.Component{
     constructor(){
@@ -35,24 +36,15 @@ class CartDetails extends React.Component{
         const {cartItems} = this.props;
         console.log("cartItems",cartItems)
 
-        const groupedItems = cartItems.reduce((acc, item)=> {
-            if(acc[item.id]){
-                acc[item.id].quantity++ 
-            }else{
-                acc[item.id] = {...item, quantity: 1}
-            }
-            return acc;
-        }, {})
-
         return(
             <div>
-                <Header/>
+                <Header />
                 <p style={{fontSize:"25px",fontWeight:500,color:"white",backgroundColor:"coral",padding:"10px"}}>Cart Details Page</p>
               <div style={{width:"100%",height:"90%",backgroundColor:"lavenderblush"}}>
                   {cartItems.map((item, index) => (
                   <div key={index}style={{boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",width:"600px",padding:"20px",margin:"20px",flexDirection:"row",display:"flex",}}>
                        {/* <div style={{}}> */}
-                           <img src={item.image}  style={{height:"100px",maxWidth:"100%",marginLeft:"30px"}}/>
+                           <img src={item.images[0]}  style={{height:"100px",maxWidth:"100%",marginLeft:"30px"}}/>
                         {/* </div> */}
                      <div style={{margin:"auto",fontSize:"18px",fontFamily:"serif",fontWeight:600}}>
                          <p> {item.name}</p>
@@ -70,6 +62,7 @@ class CartDetails extends React.Component{
               <Button variant="text" style={{ margin: "20px", padding: "10px", backgroundColor: "coral", color: "white" ,fontWeight:600,border:"none",width:"250px" }}>
                  <Link to={this.state.isLoggedIn ? "/payments" : "/login"} style={{textDecoration:"none",padding:"5px",backgroundColor:"coral",color:"white",borderRadius:"5px"}} onClick={this.handleCheckout}>PLACE ORDER</Link>
               </Button>
+              <Footer />
             </div>
         )
     }
@@ -91,4 +84,3 @@ const mapDispatchToProps=(dispatch)=>{
 
 export default connect (mapStateToProps,mapDispatchToProps)(CartDetails);
 
-// {Object.values(groupedItems).map((item, index) => (

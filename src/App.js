@@ -12,6 +12,8 @@ import ShippingPolicy from './components/footer/ShippingPolicy.jsx';
 import PrivacyPolicy from './components/footer/PrivacyPolicy.jsx';
 import TermsOfService from './components/footer/TermsOfService.jsx';
 import Help from './components/footer/Help.jsx';
+import ProductPage from './components/product/ProductPage.jsx';
+import OrderSucess from './components/OrderSucess.jsx';
 
 function App(){
   return(
@@ -29,6 +31,8 @@ function App(){
         <Route exact path="/privacyPolicy"> <PrivacyPolicy/> </Route>
         <Route exact path="/termsOfService"> <TermsOfService/> </Route>
         <Route exact path="/help"> <Help/> </Route>
+        <Route exact path="/productPage/:id"> <ProductPage/> </Route>
+        <Route exact path="/orderSucess"> <OrderSucess/> </Route>
 
       </Switch>
      </BrowserRouter>

@@ -21,16 +21,3 @@ root.render(
 reportWebVitals();
 
 
-// handleFilterChange = (filterType) => {
-//   this.setState({ filterType }, this.filterProducts);
-// };
-
-// filterProducts = () => {
-//   const { products, filterType } = this.state;
-//   if (filterType === "all") {
-//     this.setState({ filteredProducts: products });
-//   } else {
-//     const filteredProducts = products[filterType];
-//     this.setState({ filteredProducts });
-//   }
-// };

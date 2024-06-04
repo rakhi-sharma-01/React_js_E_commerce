@@ -2,186 +2,201 @@
   "mobiles": [
     {
       "id": 1,
-      "name": "Smartphone A1",
-      "price": 699.99,
+      "name": "OnePlus Nord CE 3 Lite 5G",
+      "price": "699.99",
       "description": "A high-performance smartphone with a sleek design and advanced features. It includes a powerful processor, a stunning display, and a high-capacity battery. Perfect for gaming, photography, and multitasking.",
       "offers": "10% off on first purchase",
+      "category": "mobiles",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202304/03/NZuWi2WsYLtOAgER.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202304/03/Bt0iRmyzNrK5vaiW.png?x-amz-process=image/format,webp/quality,Q_80",
         "https://via.placeholder.com/150"
       ]
     },
     {
       "id": 2,
-      "name": "Smartphone B2",
-      "price": 499.99,
+      "name": "OnePlus 12R",
+      "price": "48999.99",
       "description": "A budget-friendly smartphone with a powerful battery and vibrant display. Enjoy all-day battery life, an impressive camera, and a user-friendly interface. Ideal for everyday use.",
       "offers": "Buy one get one 50% off",
+      "category": "mobiles",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202401/10/HgVrnyGWX8d4gbor.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202401/10/KVfxIXgcGXZQSkzA.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202401/10/b8NMjXNKTv9YeNXQ.png?x-amz-process=image/format,webp/quality,Q_80"
       ]
     },
     {
       "id": 3,
-      "name": "Smartphone C3",
-      "price": 899.99,
+      "name": "OnePlus Nord CE 2 Lite 5G",
+      "price": "17999.99",
       "description": "A premium smartphone with the latest technology and superior camera quality. Features include a top-of-the-line processor, high-resolution display, and advanced camera system for stunning photos and videos.",
       "offers": "Free shipping on orders over $500",
+      "category": "mobiles",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202211/30/XNOpzegrPhsZk4L6.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202211/30/kJIa89Ujc5JeC6Ir.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202211/30/bq8YoVGLLMttenMm.png?x-amz-process=image/format,webp/quality,Q_80"
       ]
     },
     {
       "id": 4,
-      "name": "Smartphone D4",
-      "price": 799.99,
+      "name": "OnePlus 10 Pro 5G",
+      "price": "66999.99",
       "description": "A versatile smartphone with excellent performance and sleek design. Equipped with a fast processor, sharp display, and extensive battery life. Perfect for professionals and tech enthusiasts.",
       "offers": "20% off with code SAVE20",
+      "category": "mobiles",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202211/30/aBn1jO99ciUhzDao.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202211/30/zkedVT4FPx32eoem.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202211/30/HrL6JTvGlbGbfdAx.png?x-amz-process=image/format,webp/quality,Q_80"
       ]
     },
     {
       "id": 5,
-      "name": "Smartphone E5",
-      "price": 599.99,
+      "name": "OnePlus Nord CE45",
+      "price": "24999.99",
       "description": "A reliable smartphone with a long-lasting battery and crystal clear display. Features include a robust build, excellent camera quality, and smooth performance for all your needs.",
       "offers": "15% off on weekends",
+      "category": "mobiles",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://image01-in.oneplus.net/ebp/202404/07/1-M00-52-A5-CpgM7mYR-t-AD9lKAAWYyOWBY10861.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/ebp/202404/07/1-M00-52-A5-CpgM7mYR-vCAN8V-AAQCM4sbX7I561.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/ebp/202403/25/1-M00-52-9E-CpgM7WYA7WeAcQICAAJfZ_vwBTk649.png?x-amz-process=image/format,webp/quality,Q_80"
       ]
     }
   ],
   "smart_tvs": [
     {
       "id": 6,
-      "name": "Smart TV A1",
-      "price": 999.99,
+      "name": "Smart TV CUE70 ",
+      "price": "999.99",
       "description": "A 55-inch smart TV with 4K resolution and HDR support. Enjoy an immersive viewing experience with vibrant colors and sharp details. Equipped with smart features for seamless streaming and connectivity.",
       "offers": "Free soundbar with purchase",
+      "category": "smart_tvs",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43cue70aklxl/gallery/in-crystal-uhd-cu7000-471711-ua43cue70aklxl-537527812?$1300_1038_PNG$",
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43cue70aklxl/gallery/in-crystal-uhd-cu7000-471711-ua43cue70aklxl-537527803?$2052_1641_PNG$",
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43cue70aklxl/gallery/in-crystal-uhd-cu7000-471711-ua43cue70aklxl-541486407?$2052_1641_PNG$"
       ]
     },
     {
       "id": 7,
       "name": "Smart TV B2",
-      "price": 1299.99,
+      "price": "1299.99",
       "description": "A 65-inch smart TV with ultra-high-definition display and smart features. Experience stunning visuals and high-quality audio with this state-of-the-art television. Perfect for home theaters.",
       "offers": "Save $200 on your next purchase",
+      "category": "smart_tvs",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43t5450akxxl/gallery/in-fhd-t5310-428860-ua43t5450akxxl-532972981?$2052_1641_PNG$",
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43cue70aklxl/gallery/in-crystal-uhd-cu7000-471711-ua43cue70aklxl-537527803?$2052_1641_PNG$",
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43cue70aklxl/gallery/in-crystal-uhd-cu7000-471711-ua43cue70aklxl-541486407?$2052_1641_PNG$"
       ]
     },
     {
       "id": 8,
       "name": "Smart TV C3",
-      "price": 799.99,
+      "price": "799.99",
       "description": "A 50-inch smart TV with vibrant colors and excellent sound quality. Features include a user-friendly interface, multiple connectivity options, and a sleek design. Ideal for any living room.",
       "offers": "Free wall mount with purchase",
+      "category": "smart_tvs",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://images.samsung.com/is/image/samsung/p6pim/in/qa55s90daulxl/gallery/in-oled-s90d-qa55s90daulxl-540992638?$1300_1038_PNG$",
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43cue70aklxl/gallery/in-crystal-uhd-cu7000-471711-ua43cue70aklxl-537527803?$2052_1641_PNG$",
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43cue70aklxl/gallery/in-crystal-uhd-cu7000-471711-ua43cue70aklxl-541486407?$2052_1641_PNG$"
       ]
     },
     {
       "id": 9,
       "name": "Smart TV D4",
-      "price": 1499.99,
+      "price": "1499.99",
       "description": "A 75-inch smart TV with immersive viewing experience and smart home integration. Enjoy lifelike picture quality, enhanced sound, and easy control with voice assistants.",
       "offers": "10% off on using credit card",
+      "category": "smart_tvs",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43du8300ulxl/gallery/in-crystal-uhd-du8000-ua43du8300ulxl-540319828?$1300_1038_PNG$",
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43cue70aklxl/gallery/in-crystal-uhd-cu7000-471711-ua43cue70aklxl-537527803?$2052_1641_PNG$",
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43cue70aklxl/gallery/in-crystal-uhd-cu7000-471711-ua43cue70aklxl-541486407?$2052_1641_PNG$"
       ]
     },
     {
       "id": 10,
-      "name": "Smart TV E5",
-      "price": 899.99,
+      "name": "Smart TV CUE70 ",
+      "price": "899.99",
       "description": "A 55-inch smart TV with sharp image quality and user-friendly interface. Features include smart connectivity, dynamic range, and sleek aesthetics. A great addition to any home.",
       "offers": "Extended warranty for 1 year",
+      "category": "smart_tvs",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://images.samsung.com/is/image/samsung/p6pim/in/qa43ls03daulxl/gallery/in-the-frame-ls03d-qa43ls03daulxl-thumb-540988291",
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43cue70aklxl/gallery/in-crystal-uhd-cu7000-471711-ua43cue70aklxl-537527803?$2052_1641_PNG$",
+        "https://images.samsung.com/is/image/samsung/p6pim/in/ua43cue70aklxl/gallery/in-crystal-uhd-cu7000-471711-ua43cue70aklxl-541486407?$2052_1641_PNG$"
       ]
     }
   ],
   "tablets": [
     {
       "id": 11,
-      "name": "Tablet A1",
-      "price": 299.99,
+      "name": "OnePlus Pad Go",
+      "price": "23999.99",
       "description": "A lightweight tablet with a high-resolution display and powerful processor. Perfect for browsing, streaming, and light gaming. Features long battery life and fast charging.",
       "offers": "Free case with purchase",
+      "category": "tablets",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202310/04/pkFeFhYbXuWNZFUK.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202310/04/mVKR3hRa1Y2FO0pH.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202310/04/qWdA2QCulxmCuXmG.png?x-amz-process=image/format,webp/quality,Q_80"
       ]
     },
     {
       "id": 12,
-      "name": "Tablet B2",
-      "price": 399.99,
+      "name": "OnePlus Pad",
+      "price": "399.99",
       "description": "A versatile tablet with long battery life and ample storage. Ideal for students and professionals. Comes with a responsive touchscreen and intuitive interface.",
       "offers": "10% off on student discount",
+      "category": "tablets",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202304/20/kaXcNiILUoKdClgL.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202310/04/pkFeFhYbXuWNZFUK.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202310/04/mVKR3hRa1Y2FO0pH.png?x-amz-process=image/format,webp/quality,Q_80"
       ]
     },
     {
       "id": 13,
-      "name": "Tablet C3",
-      "price": 499.99,
+      "name": "OnePlus Magnetic Keyboard",
+      "price": "499.99",
       "description": "A high-performance tablet with a sleek design and advanced features. Includes a stunning display, fast processor, and extensive app support. Great for productivity and entertainment.",
       "offers": "Trade-in offer available",
+      "category": "tablets",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://image01-in.oneplus.net/ebp/202304/21/1-m00-51-2c-cpgm7mrcaagassi3aapl4mbaxfi553.png",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202310/04/mVKR3hRa1Y2FO0pH.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202310/04/mVKR3hRa1Y2FO0pH.png?x-amz-process=image/format,webp/quality,Q_80"
       ]
     },
     {
       "id": 14,
-      "name": "Tablet C3",
-      "price": 499.99,
+      "name": "OnePlus C4",
+      "price": "499.99",
       "description": "A high-performance tablet with a sleek design and advanced features. Includes a stunning display, fast processor, and extensive app support. Great for productivity and entertainment.",
       "offers": "Trade-in offer available",
+      "category": "tablets",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://image01-in.oneplus.net/ebp/202304/21/1-m00-51-29-cpgm7wrcaakae1sraadn7uh5pi8343.png",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202310/04/mVKR3hRa1Y2FO0pH.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202310/04/mVKR3hRa1Y2FO0pH.png?x-amz-process=image/format,webp/quality,Q_80"
       ]
     },
     {
       "id": 15,
-      "name": "Tablet C3",
-      "price": 499.99,
+      "name": "OnePlus C5",
+      "price": "499.99",
       "description": "A high-performance tablet with a sleek design and advanced features. Includes a stunning display, fast processor, and extensive app support. Great for productivity and entertainment.",
       "offers": "Trade-in offer available",
+      "category": "tablets",
       "images": [
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150",
-        "https://via.placeholder.com/150"
+        "https://image01-in.oneplus.net/ebp/202304/21/1-m00-51-2c-cpgm7mrcz_6awny5aaj6qewd2am918.png",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202310/04/mVKR3hRa1Y2FO0pH.png?x-amz-process=image/format,webp/quality,Q_80",
+        "https://image01-in.oneplus.net/india-oneplus-statics-file/epb/202310/04/mVKR3hRa1Y2FO0pH.png?x-amz-process=image/format,webp/quality,Q_80"
       ]
     }
   ]

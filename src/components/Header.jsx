@@ -143,28 +143,6 @@ class Header extends Component {
                   </div>}
                </a>
              </div>
-             {/* <nav>
-              <ul>
-                <li onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut} style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",listStyleType: "none"}}>Smart TV
-                {dropdownVisible && 
-                  <div style={{width:"90%",height:"300px",color:"white",backgroundColor:"black",zIndex:1}}>
-                    <ul>
-                      <li>MI TV</li>
-                      <li>MI TV</li>
-                      <li>MI TV</li>
-                      <li>MI TV</li>
-                    </ul>
-                  </div>
-                }
-                </li>
-              </ul> */}
-             {/* </nav> */}
-             {/* <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap"}}>Smart TV</a>
-             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Phone</a>
-             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Tablet</a>
-             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Community</a>
-             <a style={{width:"120px",fontSize:"24px",padding:"20px"}}>Support</a> */}
-
 
              <div style={{display:'flex',marginLeft:'20%',padding:"17px"}}>
                <AccountCircleIcon fontSize="large" style={{fontSize:"40px"}} onClick={this.goToProfile}/>
