@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Header from './Header'
 import {decreaseQuantity,increaseQuantity} from './Action/cartActions';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 
@@ -27,6 +27,14 @@ class CartDetails extends React.Component{
         return parseInt((item.price).replace(/,/g, '')) * item.quantity;
 
     }
+    finalPriceCal =()=>{
+        const {cartItems} = this.props;
+        let finalPrice = 0;
+        cartItems.forEach(item => {
+            finalPrice += this.calculateTotalPrice(item);
+        })
+        return finalPrice;
+    }
     // handlePlaceOrder=()=> {
     //     return localStorage.getItem("isLogIn")
     // }
@@ -39,8 +47,9 @@ class CartDetails extends React.Component{
         return(
             <div>
                 <Header />
-                <p style={{fontSize:"25px",fontWeight:500,color:"white",backgroundColor:"coral",padding:"10px"}}>Cart Details Page</p>
-              <div style={{width:"100%",height:"90%",backgroundColor:"lavenderblush"}}>
+                <p style={{fontSize:"25px",fontWeight:500,color:"white",backgroundColor:"coral",padding:"10px"}}>Cart Details Page</p>      
+                <div style={{display:"flex",flexDirection:"row"}}>
+                <div style={{width:"60%",height:"90%",backgroundColor:"lavenderblush",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
                   {cartItems.map((item, index) => (
                   <div key={index}style={{boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",width:"600px",padding:"20px",margin:"20px",flexDirection:"row",display:"flex",}}>
                        {/* <div style={{}}> */}
@@ -59,10 +68,34 @@ class CartDetails extends React.Component{
                   </div>
                  ))}
               </div>
+              <div style={{display:"flex",flexDirection:"column",width:"22%",padding:"50px"}}>
+                <Typography style={{fontWeight:700,borderBottom:"1px solid grey",margin:"10px",paddingBottom:"10px"}}>PRICE DETAILS</Typography>
+                <div style={{borderBottom:"1px solid grey",margin:"10px"}}>
+                    <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+                    <Typography style={{fontSize:"20px",fontWeight:500}}>Price :</Typography>
+                    <Typography style={{fontSize:"20px",fontWeight:500}}>{this.finalPriceCal()}</Typography>
+                    </div>
+                    <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+                    <Typography style={{fontSize:"20px",fontWeight:500}}>Discount :</Typography>
+                    <Typography style={{fontSize:"20px",fontWeight:500,color:"green"}}>20% off</Typography>
+                    </div>
+                    <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+                    <Typography style={{fontSize:"20px",fontWeight:500}}>Delivery Charges :</Typography>
+                    <Typography style={{fontSize:"20px",fontWeight:500,color:"green"}}>Free</Typography>
+                    </div>
+                </div>
+                <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",margin:"10px"}}>
+                    <Typography style={{fontSize:"20px",fontWeight:700}}>Total Amount :</Typography>
+                    <Typography style={{fontSize:"20px",fontWeight:700}}>{this.finalPriceCal()}</Typography>
+                    </div>
               <Button variant="text" style={{ margin: "20px", padding: "10px", backgroundColor: "coral", color: "white" ,fontWeight:600,border:"none",width:"250px" }}>
                  <Link to={this.state.isLoggedIn ? "/payments" : "/login"} style={{textDecoration:"none",padding:"5px",backgroundColor:"coral",color:"white",borderRadius:"5px"}} onClick={this.handleCheckout}>PLACE ORDER</Link>
               </Button>
-              <Footer />
+              </div>
+
+                    
+                </div>          
+                <Footer />
             </div>
         )
     }

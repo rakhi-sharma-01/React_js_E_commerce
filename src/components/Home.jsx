@@ -2,37 +2,23 @@ import React, { Component } from "react";
 import Header from "./Header";
 import { Button } from "@mui/material";
 import { connect } from "react-redux";
-import { addToCart, filterProducts, loadProducts,loadProductDetails } from "./Action/cartActions";
+import { addToCart, filterProducts, loadProducts } from "./Action/cartActions";
 import { Link, withRouter } from "react-router-dom";
 import Slider from "./Slider";
 import Footer from "./Footer";
-// import productsData from "./products.json";
 
 class Home extends Component {
 componentDidMount(){
   this.props.loadProducts();
 }
-// handleAddToCart =(product)=> {
-//   this.props.addToCart(product)
-// }
 handleFilterChange =(filterType) => {
   this.props.filterProducts(filterType)
 }
-// handleCartState = (productId) => {
-//   return this.props.cart.some((cartItem) => cartItem.id === productId);
-// };
-
-// handleGoToCart = () => {
-//   this.props.history.push("/cartDetails");
-// };
-
 
   render() {
     const { filteredProducts,  } = this.props;
     console.log("filteredProducts",filteredProducts);
-    // if(!filteredProducts){
-    //   return null;
-    // }
+
     return (
       <div style={{ top: "20px", backgroundColor: "lavenderblush" }}>
         <Header cartCount={this.props.cart.length} />
@@ -68,7 +54,7 @@ handleFilterChange =(filterType) => {
                 style={{ width: "300px", height: "360px", textAlign: "center", }}
               >
                 <img
-                  src={product.images[0]} //first image is the main image
+                  src={product.images[0]} 
                   style={{
                     height: "300px",
                     width: "300px",
@@ -82,17 +68,6 @@ handleFilterChange =(filterType) => {
               </div>
               <div style={{ textAlign: "center" }}>
                 <Button style={{fontWeight:700,fontSize:"18px"}}>Know more</Button>
-                {/* <Button
-                  variant="contained"
-                  onClick={() =>
-                    this.handleCartState(product.id)
-                      ? this.handleGoToCart(product)
-                      : this.handleAddToCart(product)
-                  }
-                  style={{ fontWeight: 600, marginTop: "10px" }}
-                >
-                  {this.handleCartState(product.id) ? "Go to Cart" : "Add to Cart"}
-                </Button> */}
               </div>
              </div>
            </Link>
@@ -112,7 +87,6 @@ const mapStateToProps = (state) => {
     cart: state.cart.items,
     filteredProducts: state.cart.filteredProducts,
     products: state.cart.products,
-    // productDetail: state.products.productDetail
   };
 };
 
@@ -121,8 +95,34 @@ const mapDispatchToProps = (dispatch) => {
     addToCart: (item) => dispatch(addToCart(item)),
     loadProducts: () => dispatch(loadProducts()),
     filterProducts: (filterType) => dispatch(filterProducts(filterType)),
-    // loadProductDetails: (productId) => dispatch(loadProductDetails(productId))
   };
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));
+
+// handleAddToCart =(product)=> {
+//   this.props.addToCart(product)
+// }
+// handleCartState = (productId) => {
+//   return this.props.cart.some((cartItem) => cartItem.id === productId);
+// };
+
+// handleGoToCart = () => {
+//   this.props.history.push("/cartDetails");
+// };
+
+    // if(!filteredProducts){
+    //   return null;
+    // }
+
+                {/* <Button
+                  variant="contained"
+                  onClick={() =>
+                    this.handleCartState(product.id)
+                      ? this.handleGoToCart(product)
+                      : this.handleAddToCart(product)
+                  }
+                  style={{ fontWeight: 600, marginTop: "10px" }}
+                >
+                  {this.handleCartState(product.id) ? "Go to Cart" : "Add to Cart"}
+                </Button> */}

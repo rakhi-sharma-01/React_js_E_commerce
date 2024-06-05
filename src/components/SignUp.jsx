@@ -19,24 +19,25 @@ import { Link } from "react-router-dom";
 import * as yup from "yup";
 
 const RegisterSchema = yup.object().shape({
-  name: yup.string().required("Required"),
+  name: yup.string().matches(/^[a-zA-Z]*$/,"Name should be text only").required("Name is required"),
   email: yup
     .string()
     .matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, "Please enter valid Email Id")
-    .required("Required"),
+    .required("Email is required"),
   password: yup
     .string()
     .matches(
       // /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
       // "Password must contain at least one uppercase, one lowercase, one special character, and one number with a minimum of eight characters"
     )
-    .required("Required"),
-  mobNo: yup.string().required("Required"),
-  gender: yup.string().required("Required"),
-  city: yup.string().required("Required"),
-  state: yup.string().required("Required"),
-  country: yup.string().required("Required"),
-  address: yup.string().required("Required"),
+    .required("Password is required"),
+  mobNo: yup.string().matches(/^([0|+[0-9]{1,5})?([7-9][0-9]{9})$/, "Mobile number should contain 10 digits")
+  .required("Mobile number is required"),
+  gender: yup.string().required("gender is required"),
+  city: yup.string().required("City is required"),
+  state: yup.string().required("State is required"),
+  country: yup.string().required("Country is required"),
+  address: yup.string().required("Address is required"),
 });
 
 class SignUp extends React.Component {
@@ -162,6 +163,7 @@ class SignUp extends React.Component {
                           name="name"
                           type="text"
                           value={values.name}
+                          onBlur={handleBlur}
                           onChange={handleChange}
                           label="Name"
                           variant="outlined"
@@ -174,6 +176,7 @@ class SignUp extends React.Component {
                           name="email"
                           type="email"
                           value={values.email}
+                          onBlur={handleBlur}
                           onChange={handleChange}
                           label="Email"
                           variant="outlined"
@@ -185,6 +188,7 @@ class SignUp extends React.Component {
                           id="password"
                           name="password"
                           value={values.password}
+                          onBlur={handleBlur}
                           onChange={(e) =>
                             setFieldValue("password", this.handlePassword(e))
                           }
@@ -288,6 +292,7 @@ class SignUp extends React.Component {
                           type="text"
                           value={values.city}
                           onChange={handleChange}
+                          onBlur={handleBlur}
                           label="City"
                           variant="outlined"
                           error={Boolean(touched.city && errors.city)}
@@ -300,6 +305,7 @@ class SignUp extends React.Component {
                           type="text"
                           value={values.state}
                           onChange={handleChange}
+                          onBlur={handleBlur}
                           label="State"
                           variant="outlined"
                           error={Boolean(touched.state && errors.state)}
@@ -312,6 +318,7 @@ class SignUp extends React.Component {
                           type="text"
                           value={values.country}
                           onChange={handleChange}
+                          onBlur={handleBlur}
                           label="Country"
                           variant="outlined"
                           error={Boolean(touched.country && errors.country)}
@@ -323,6 +330,7 @@ class SignUp extends React.Component {
                           name="address"
                           type="text"
                           value={values.address}
+                          onBlur={handleBlur}
                           onChange={handleChange}
                           label="Address"
                           variant="outlined"
@@ -376,29 +384,3 @@ class SignUp extends React.Component {
 
 export default withRouter((SignUp));
 
-// passwordStrength = (e) => {
-//   console.log("called", e);
-//   console.log("pass length",e?.target.value);
-//   const newPass = e?.target.value;
-//   this.setState({password:newPass})
-//   console.log("newPass",newPass);
-//   if (newPass.length >= 6) {
-//     this.setState({ strengthMsg: "strong password" });
-//   } else {this.setState({ strengthMsg: "weak password" });
-//     }
-// };
-
-// getPassword = (pass) => {
-//   if(pass.length > 8){
-//     this.setState({ strengthMsg: "Strong password" });
-//     } else {
-//       this.setState({ strengthMsg: "Weak password" });
-//     }
-// }
-
-// handlePassword = (e) => {
-//   const pass = e.target.value;
-//   console.log("strength",pass);
-//   const strength = this.getPassword(pass)
-//   this.setState({pass,strength})
-// }

@@ -14,8 +14,8 @@ class ProductPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mainImage: null
-    }
+      mainImage: null,
+    };
   }
   componentDidMount() {
     this.props.loadProducts();
@@ -36,58 +36,66 @@ class ProductPage extends Component {
   handleThumbnailClick = (image) => {
     this.setState({ mainImage: image });
   };
-  handleAddToCart =(product)=> {
-    this.props.addToCart(product)
-  }
+  handleAddToCart = (product) => {
+    this.props.addToCart(product);
+  };
 
   handleCartState = (productId) => {
     return this.props.cart.some((cartItem) => cartItem.id === productId);
   };
-  
+
   handleGoToCart = () => {
     this.props.history.push("/cartDetails");
   };
 
   render() {
     const { productDetail } = this.props;
-    const {mainImage} = this.state;
+    const { mainImage } = this.state;
     // if (!product) {
     //   return <div>Loading...</div>;
     // };
 
     return (
-      <div style={{backgroundColor:"lavenderblush"}}>
+      <div>
         <Header />
 
         <div className="product-page">
           <div className="product-gallery">
             <img
               src={mainImage}
-              // src={productDetail.images?.[0]}
               alt="Product"
               className="main-image"
             />
             <div className="thumbnail-images">
               {productDetail.images?.map((image, index) => (
-                <img key={index} src={image} alt={`Thumbnail ${index + 1}`} onClick={()=>this.handleThumbnailClick(image)} />
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Thumbnail ${index + 1}`}
+                  onClick={() => this.handleThumbnailClick(image)}
+                />
               ))}
             </div>
           </div>
           <div className="product-details">
-            <p style={{fontSize:"30px",fontWeight:700,margin:"20px"}}>{productDetail.name}</p>
+            <p style={{ fontSize: "30px", fontWeight: 700, margin: "20px" }}>
+              {productDetail.name}
+            </p>
             <p className="price">Rs:{productDetail.price}</p>
-            <p style={{fontSize:"20px",fontWeight:500,margin:"20px",color:"green"}}>{productDetail.offers}</p>
-            <p style={{fontSize:"20px",fontWeight:400,margin:"20px"}}>Description: {productDetail.description}</p>
-            {/* <div className="sizes">
-            <p>Size:</p>
-            <select>
-              <option>26</option>
-              <option>27</option>
-              <option>28</option>
-              <option>29</option>
-              <option>30</option>
-            </select>
-           </div> */}
+            <p
+              style={{
+                fontSize: "20px",
+                fontWeight: 500,
+                margin: "20px",
+                color: "green",
+              }}
+            >
+              {productDetail.offers}
+            </p>
+            <p style={{ fontSize: "20px", fontWeight: 400, margin: "20px" }}>
+              Description: {productDetail.description}
+            </p>
+   
             <button
               className="add-to-bag"
               onClick={() =>
@@ -97,8 +105,9 @@ class ProductPage extends Component {
               }
               // onClick={() => this.props.addToCart(productDetail)}
             >
-             {this.handleCartState(productDetail.id) ? "Go to Cart" : "Add to Cart"}
-
+              {this.handleCartState(productDetail.id)
+                ? "Go to Cart"
+                : "Add to Cart"}
             </button>
           </div>
         </div>
@@ -128,4 +137,5 @@ const mapDispatchToProps = (dispatch) => {
 export default withRouter(
   connect(mapStateToProps, mapDispatchToProps)(ProductPage)
 );
+
 

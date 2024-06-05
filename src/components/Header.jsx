@@ -51,7 +51,7 @@ class Header extends Component {
     this.setState({ isLoggedIn: true });
   };
   goTohome =() => {
-    this.props.history.push('./');
+    this.props.history.replace('/');
   }
 
   handleLogout = () => {
@@ -80,22 +80,22 @@ class Header extends Component {
             <Typography>FREE SHIPPING ON ALL ONLINE PAYMENTS. FREE RETURNS.</Typography>
            </div>
            <div style={{width:"100%",overflow:"hidden",backgroundColor:"black",height:"100px",color:"white",display:"flex",justifyContent:"space-between"}}>
-             <a style={{width:"120px",fontSize:"24px",padding:"10px"}}><img style={{height:"50px",width:"50px",marginLeft:"20px"}} src="RAKHI SHARMA.png" onClick={this.goTohome}/></a>
+             <a style={{width:"120px",fontSize:"24px",padding:"10px"}}><img style={{height:"50px",width:"50px",marginLeft:"20px",cursor:"pointer"}} src="RAKHI SHARMA.png"  onClick={this.goTohome}/></a>
              <div style={{position:"relative"}}>
-             <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('smartTv')} onMouseOut={()=>this.handleMouseOut('smartTv')}>
-                 Smart TV 
-                  {dropdownVisible.smartTv && 
+             <Link to={"/aboutUs"} style={{width:"120px",cursor:"pointer",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('smartTv')} onMouseOut={()=>this.handleMouseOut('smartTv')}>
+                 About Us 
+                  {/* {dropdownVisible.smartTv && 
                   <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
                     <ul style={{ fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"max-content"}}>
                       <li>QLED TV</li>
                       <li>Alexa TV</li>
                     </ul>
-                  </div>}
-               </a>
+                  </div>} */}
+               </Link>
              </div> 
-             <div style={{position:"relative"}}>
+             {/* <div style={{position:"relative"}}>
                 <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('phone')} onMouseOut={()=>this.handleMouseOut('phone')}>
-                 Phone 
+                 Info 
                   {dropdownVisible.phone && 
                   <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
                     <ul style={{ fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"max-content"}}>
@@ -104,8 +104,8 @@ class Header extends Component {
                     </ul>
                   </div>}
                </a>
-             </div>
-             <div style={{position:"relative"}}>
+             </div> */}
+             {/* <div style={{position:"relative"}}>
                 <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('tablet')} onMouseOut={()=>this.handleMouseOut('tablet')}>
                  Tablet 
                   {dropdownVisible.tablet && 
@@ -117,40 +117,40 @@ class Header extends Component {
                     </ul>
                   </div>}
                </a>
-             </div>
+             </div> */}
              <div style={{position:"relative"}}>
-                <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('community')} onMouseOut={()=>this.handleMouseOut('community')}>
+                <Link to={"/community"} style={{width:"120px",cursor:"pointer",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('community')} onMouseOut={()=>this.handleMouseOut('community')}>
                  Community 
-                  {dropdownVisible.community && 
+                  {/* {dropdownVisible.community && 
                   <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
                     <ul style={{ fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"max-content"}}>
                       <li>Our Community</li>
                       <li>Our Team</li>
                       <li>Our Clients</li>
                     </ul>
-                  </div>}
-               </a>
+                  </div>} */}
+               </Link>
              </div>
              <div style={{position:"relative"}}>
-                <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('support')} onMouseOut={()=>this.handleMouseOut('support')}>
+                <Link style={{width:"120px",cursor:"pointer",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} to={"/help"}>
                  Support 
-                  {dropdownVisible.support && 
+                  {/* {dropdownVisible.support && 
                   <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
                     <ul style={{ fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"120px"}}>
                       <li>Email Us</li>
                       <li>Chat Now</li>
                     </ul>
-                  </div>}
-               </a>
+                  </div>} */}
+               </Link>
              </div>
 
              <div style={{display:'flex',marginLeft:'20%',padding:"17px"}}>
-               <AccountCircleIcon fontSize="large" style={{fontSize:"40px"}} onClick={this.goToProfile}/>
+               <AccountCircleIcon fontSize="large" style={{fontSize:"40px",cursor:"pointer"}} onClick={this.goToProfile}/>
              </div>
 
               <div style={{padding:"17px"}}>
                 <StyledBadge sx={{fontSize:"20px",fontWeight:600}} badgeContent={this.props.cartCount} color="primary">
-                  <ShoppingCartIcon fontSize="large" style={{fontSize:"40px"}} onClick={this.handleClick}/>
+                  <ShoppingCartIcon fontSize="large" style={{fontSize:"40px",cursor:"pointer"}} onClick={this.handleClick}/>
                 </StyledBadge>
               </div>
               <div>

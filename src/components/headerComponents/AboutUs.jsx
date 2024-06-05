@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import { withRouter } from "react-router-dom";
 import Footer from "../Footer";
 
-class ShippingPolicy extends Component {
+class AboutUs extends Component {
   constructor() {
     super();
   }
@@ -19,10 +19,14 @@ class ShippingPolicy extends Component {
             justifyContent: "center",
             alignItems: "center",
             display: "flex",
+            flexDirection:"column"
           }}
         >
-          <div style={{width:"50%",textAlign:"justify",padding:"20px",margin:"20px 10px",gap:"20px",display:"flex",flexDirection:"column",backgroundColor:"white",boxShadow: "rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset"}}>
-            <Typography style={{fontWeight:700, fontSize:"30px",textAlign:"center"}}>Shipping Policy</Typography>
+            <div style={{width:"90%",height:"600px"}}>
+                <img style={{width:"100%",height:"600px"}} src="https://media.istockphoto.com/id/520113235/photo/multiethnic-people-in-circle-with-about-us-concept.jpg?s=1024x1024&w=is&k=20&c=S44VlE3BH1CTY7IPjb5PIRBOibcPtGiGO-UP8BU8qgQ="/>
+            </div>
+          <div style={{width:"90%",textAlign:"justify",padding:"20px",margin:"20px 10px",gap:"20px",display:"flex",flexDirection:"column",backgroundColor:"white",boxShadow: "rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset"}}>
+            <Typography style={{fontWeight:700, fontSize:"30px",textAlign:"center"}}>About Us</Typography>
 
             <Typography variant="body1">
               We have a 2-day return policy, which means you have 2 days after
@@ -89,4 +93,4 @@ class ShippingPolicy extends Component {
     );
   }
 }
-export default withRouter(ShippingPolicy);
+export default withRouter(AboutUs);

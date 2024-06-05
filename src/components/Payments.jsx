@@ -164,8 +164,6 @@ class PaymentMethods extends Component {
                     <Select
                       labelId="input_label"
                       label="Month"
-                      // label="Expires on"
-                      // value="Gender"
                       style={{ width: "150px" }}
                       id="month"
                       name="month"

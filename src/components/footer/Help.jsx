@@ -59,19 +59,24 @@ class Help extends Component {
           <div
             style={{
               width: "100%",
-              height: "500px",
+              height: "550px",
               margin: "0 auto",
-              backgroundColor: "#80a9a8",
-              color:"white"
+              backgroundColor: "lavenderblush",
+              color:"black",
+              display:"flex",
+              flexDirection:"column"
             }}
           >
-            <Typography variant="h4" gutterBottom style={{textAlign:"center"}}>
+            <div style={{width:"100%"}}>
+            <Typography variant="h4" gutterBottom style={{textAlign:"center",marginTop:"10px"}}>
               Contact Information
             </Typography>
             <Typography variant="body1" gutterBottom style={{textAlign:"center"}}>
               We’d love to hear about your experience with Rosier. Please get in
               touch with any comments, suggestions or questions you might have.
             </Typography>
+            </div>
+            <div style={{width:"100%"}}>
             <Formik
               initialValues={{
                 name: "",
@@ -84,7 +89,7 @@ class Help extends Component {
             >
               {({ errors, touched }) => (
                 <Form style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-                  <div style={{ marginBottom: 20 }}>
+                  <div style={{ marginBottom: 20,width:"350px" }}>
                     <Field
                       name="name"
                       as={TextField}
@@ -94,7 +99,7 @@ class Help extends Component {
                       helperText={touched.name && errors.name}
                     />
                   </div>
-                  <div style={{ marginBottom: 20 }}>
+                  <div style={{ marginBottom: 20,width:"350px" }}>
                     <Field
                       name="email"
                       as={TextField}
@@ -104,7 +109,7 @@ class Help extends Component {
                       helperText={touched.email && errors.email}
                     />
                   </div>
-                  <div style={{ marginBottom: 20 }}>
+                  <div style={{ marginBottom: 20,width:"350px" }}>
                     <Field
                       name="phoneNumber"
                       as={TextField}
@@ -114,7 +119,7 @@ class Help extends Component {
                       helperText={touched.phoneNumber && errors.phoneNumber}
                     />
                   </div>
-                  <div style={{ marginBottom: 20 }}>
+                  <div style={{ marginBottom: 20,width:"350px" }}>
                     <Field
                       name="comment"
                       as={TextField}
@@ -141,6 +146,8 @@ class Help extends Component {
                 Sent successfully!
               </Typography>
             )}
+            </div>
+
           </div>
         </div>
         <Footer />

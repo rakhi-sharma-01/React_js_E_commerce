@@ -14,6 +14,8 @@ import TermsOfService from './components/footer/TermsOfService.jsx';
 import Help from './components/footer/Help.jsx';
 import ProductPage from './components/product/ProductPage.jsx';
 import OrderSucess from './components/OrderSucess.jsx';
+import AboutUs from './components/headerComponents/AboutUs.jsx';
+import Community from './components/headerComponents/Community.jsx';
 
 function App(){
   return(
@@ -33,6 +35,8 @@ function App(){
         <Route exact path="/help"> <Help/> </Route>
         <Route exact path="/productPage/:id"> <ProductPage/> </Route>
         <Route exact path="/orderSucess"> <OrderSucess/> </Route>
+        <Route exact path="/aboutUs"> <AboutUs/> </Route>
+        <Route exact path="/community"> <Community/> </Route>
 
       </Switch>
      </BrowserRouter>
