@@ -16,6 +16,7 @@ import ProductPage from './components/product/ProductPage.jsx';
 import OrderSucess from './components/OrderSucess.jsx';
 import AboutUs from './components/headerComponents/AboutUs.jsx';
 import Community from './components/headerComponents/Community.jsx';
+import Address from './components/address/Address.jsx';
 
 function App(){
   return(
@@ -37,6 +38,7 @@ function App(){
         <Route exact path="/orderSucess"> <OrderSucess/> </Route>
         <Route exact path="/aboutUs"> <AboutUs/> </Route>
         <Route exact path="/community"> <Community/> </Route>
+        <Route exact path="/address"> <Address/> </Route>
 
       </Switch>
      </BrowserRouter>

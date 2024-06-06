@@ -25,17 +25,17 @@ handleFilterChange =(filterType) => {
         <div style={{ width: "100%", height: "500px" }}>
           <Slider />
         </div>
-        <div style={{ display: "flex", justifyContent: "center",backgroundColor:"coral", }}>
-          <Button style={{color:"white",fontSize:"20px",padding:"15px",fontWeight:600}} onClick={() => this.handleFilterChange("mobiles")}>
+        <div style={{ display: "flex",padding:"3px", justifyContent: "center",backgroundColor:"coral",gap:"15px" }}>
+          <Button variant="contained" style={{color:"white",fontSize:"20px",padding:"12px",fontWeight:600}} onClick={() => this.handleFilterChange("mobiles")}>
             Mobiles
           </Button>
-          <Button style={{color:"white",fontSize:"20px",padding:"15px",fontWeight:600}} onClick={() => this.handleFilterChange("smart_tvs")}>
+          <Button variant="contained" style={{color:"white",fontSize:"20px",padding:"12px",fontWeight:600}} onClick={() => this.handleFilterChange("smart_tvs")}>
             Smart TVs
           </Button>
-          <Button style={{color:"white",fontSize:"20px",padding:"15px",fontWeight:600}} onClick={() => this.handleFilterChange("tablets")}>
+          <Button variant="contained" style={{color:"white",fontSize:"20px",padding:"12px",fontWeight:600}} onClick={() => this.handleFilterChange("tablets")}>
             Tablets
           </Button>
-          <Button style={{color:"white",fontSize:"20px",padding:"15px",fontWeight:600}} onClick={() => this.handleFilterChange("all")}>
+          <Button variant="contained" style={{color:"white",fontSize:"20px",padding:"12px",fontWeight:600}} onClick={() => this.handleFilterChange("all")}>
             All Products
           </Button>
         </div>
@@ -100,29 +100,3 @@ const mapDispatchToProps = (dispatch) => {
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));
 
-// handleAddToCart =(product)=> {
-//   this.props.addToCart(product)
-// }
-// handleCartState = (productId) => {
-//   return this.props.cart.some((cartItem) => cartItem.id === productId);
-// };
-
-// handleGoToCart = () => {
-//   this.props.history.push("/cartDetails");
-// };
-
-    // if(!filteredProducts){
-    //   return null;
-    // }
-
-                {/* <Button
-                  variant="contained"
-                  onClick={() =>
-                    this.handleCartState(product.id)
-                      ? this.handleGoToCart(product)
-                      : this.handleAddToCart(product)
-                  }
-                  style={{ fontWeight: 600, marginTop: "10px" }}
-                >
-                  {this.handleCartState(product.id) ? "Go to Cart" : "Add to Cart"}
-                </Button> */}

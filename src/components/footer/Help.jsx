@@ -59,7 +59,7 @@ class Help extends Component {
           <div
             style={{
               width: "100%",
-              height: "550px",
+              height: "650px",
               margin: "0 auto",
               backgroundColor: "lavenderblush",
               color:"black",

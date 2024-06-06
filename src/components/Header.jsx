@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { Link } from "@mui/material";
 import { Link, withRouter } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -92,60 +91,20 @@ class Header extends Component {
                     </ul>
                   </div>} */}
                </Link>
-             </div> 
-             {/* <div style={{position:"relative"}}>
-                <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('phone')} onMouseOut={()=>this.handleMouseOut('phone')}>
-                 Info 
-                  {dropdownVisible.phone && 
-                  <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
-                    <ul style={{ fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"max-content"}}>
-                      <li>Xiomi Series</li>
-                      <li>Redmi Series</li>
-                    </ul>
-                  </div>}
-               </a>
-             </div> */}
-             {/* <div style={{position:"relative"}}>
-                <a style={{width:"120px",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('tablet')} onMouseOut={()=>this.handleMouseOut('tablet')}>
-                 Tablet 
-                  {dropdownVisible.tablet && 
-                  <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
-                    <ul style={{fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"max-content"}}>
-                      <li>Xiomi Pad</li>
-                      <li>Redmi Pad</li>
-                      <li>Tablet Accessories</li>
-                    </ul>
-                  </div>}
-               </a>
-             </div> */}
+             </div>   
              <div style={{position:"relative"}}>
                 <Link to={"/community"} style={{width:"120px",cursor:"pointer",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} onMouseOver={()=>this.handleMouseOver('community')} onMouseOut={()=>this.handleMouseOut('community')}>
                  Community 
-                  {/* {dropdownVisible.community && 
-                  <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
-                    <ul style={{ fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"max-content"}}>
-                      <li>Our Community</li>
-                      <li>Our Team</li>
-                      <li>Our Clients</li>
-                    </ul>
-                  </div>} */}
                </Link>
              </div>
              <div style={{position:"relative"}}>
                 <Link style={{width:"120px",cursor:"pointer",fontSize:"24px",padding:"20px",whiteSpace:"nowrap",position:"relative"}} to={"/help"}>
                  Support 
-                  {/* {dropdownVisible.support && 
-                  <div style={{color: "white", backgroundColor: "black", position: "absolute", left: 0 }}>
-                    <ul style={{ fontFamily:"'Camphor Pro', sans-serif",fontSize:"20px", listStyleType: "none", padding: "20px", margin: 0,position:"fixed",zIndex:9999 ,backgroundColor:"black",width:"120px"}}>
-                      <li>Email Us</li>
-                      <li>Chat Now</li>
-                    </ul>
-                  </div>} */}
                </Link>
              </div>
 
              <div style={{display:'flex',marginLeft:'20%',padding:"17px"}}>
-               <AccountCircleIcon fontSize="large" style={{fontSize:"40px",cursor:"pointer"}} onClick={this.goToProfile}/>
+               <AccountCircleIcon fontSize="large" style={{fontSize:"40px",cursor:"pointer"}}  onClick={this.goToProfile}/>
              </div>
 
               <div style={{padding:"17px"}}>
@@ -162,10 +121,8 @@ class Header extends Component {
                  <Link to="/login" className="button" style={{textDecoration:"none",padding:"5px",margin:"5px",backgroundColor:"darkblue",color:"white",borderRadius:"5px"}} onClick={this.handleLogin}>Log In</Link>
                 )}
                </Button>
-    
               </div>
            </div>
-          
         </div>
       // </div>
     );

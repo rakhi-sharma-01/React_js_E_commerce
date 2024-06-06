@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Header from './Header'
 import {decreaseQuantity,increaseQuantity} from './Action/cartActions';
 import { Button, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Footer from './Footer';
 
 class CartDetails extends React.Component{
@@ -35,14 +35,15 @@ class CartDetails extends React.Component{
         })
         return finalPrice;
     }
-    // handlePlaceOrder=()=> {
-    //     return localStorage.getItem("isLogIn")
-    // }
     
 
     render(){
         const {cartItems} = this.props;
-        console.log("cartItems",cartItems)
+        console.log("cartItems",cartItems);
+        if (cartItems.length === 0) {
+            this.props.history.push("/");
+            return null; 
+          }
 
         return(
             <div>
@@ -89,11 +90,9 @@ class CartDetails extends React.Component{
                     <Typography style={{fontSize:"20px",fontWeight:700}}>{this.finalPriceCal()}</Typography>
                     </div>
               <Button variant="text" style={{ margin: "20px", padding: "10px", backgroundColor: "coral", color: "white" ,fontWeight:600,border:"none",width:"250px" }}>
-                 <Link to={this.state.isLoggedIn ? "/payments" : "/login"} style={{textDecoration:"none",padding:"5px",backgroundColor:"coral",color:"white",borderRadius:"5px"}} onClick={this.handleCheckout}>PLACE ORDER</Link>
+                 <Link to={this.state.isLoggedIn ? "/address" : "/login"} style={{textDecoration:"none",padding:"5px",backgroundColor:"coral",color:"white",borderRadius:"5px"}} onClick={this.handleCheckout}>PLACE ORDER</Link>
               </Button>
               </div>
-
-                    
                 </div>          
                 <Footer />
             </div>
@@ -115,5 +114,5 @@ const mapDispatchToProps=(dispatch)=>{
     }
 }
 
-export default connect (mapStateToProps,mapDispatchToProps)(CartDetails);
+export default withRouter(connect (mapStateToProps,mapDispatchToProps)(CartDetails));
 

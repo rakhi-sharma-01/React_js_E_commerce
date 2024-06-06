@@ -19,17 +19,13 @@ import { Link } from "react-router-dom";
 import * as yup from "yup";
 
 const RegisterSchema = yup.object().shape({
-  name: yup.string().matches(/^[a-zA-Z]*$/,"Name should be text only").required("Name is required"),
+  name: yup.string().matches(/^[a-zA-Z\s]*$/,"Name should be text only").required("Name is required"),
   email: yup
     .string()
     .matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, "Please enter valid Email Id")
     .required("Email is required"),
   password: yup
     .string()
-    .matches(
-      // /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-      // "Password must contain at least one uppercase, one lowercase, one special character, and one number with a minimum of eight characters"
-    )
     .required("Password is required"),
   mobNo: yup.string().matches(/^([0|+[0-9]{1,5})?([7-9][0-9]{9})$/, "Mobile number should contain 10 digits")
   .required("Mobile number is required"),
